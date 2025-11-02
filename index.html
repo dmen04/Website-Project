@@ -6,11 +6,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
     <title>Milwaukee Bucks</title>
   </head>
+
   <body>
-  <h1 class="font-display text-6xl text-green-900">Milwaukee Bucks</h1>
-  <p class="font-body text-base">
-      Founded in 1968, the Milwaukee Bucks are a professional NBA team...
-  </p>
+
+  <!-- TOP SOCIAL HEADER -->
+  <div id="topHeader" class="w-full bg-gray-100 py-2 transition-transform duration-300 ease-in-out">
+      <div class="max-w-7xl mx-auto flex justify-end items-center px-6 space-x-4 text-sm">
+          <a href="#" class="text-gray-600 hover:text-blue-600">Facebook</a>
+          <a href="#" class="text-gray-600 hover:text-blue-600">Instagram</a>
+          <a href="#" class="text-gray-600 hover:text-blue-600">Twitter</a>
+      </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header id="mainHeader" class="sticky top-0 z-50 bg-white shadow transition-all duration-300 ease-in-out">
+      <div class="relative max-w-7xl mx-auto flex items-center justify-between px-6 py-6 md:py-8 transition-all duration-300 ease-in-out">
+
+          <!-- LOGO (overlapping, left) -->
+          <div id="logo" class="absolute left-6 top-12 transform -translate-y-1/2 transition-all duration-500 ease-in-out">
+              <img src="public/images/logo.png"
+                   alt="Logo"
+                   class="w-40 h-40 transition-all duration-500 ease-in-out"/>
+          </div>
+
+          <!-- NAVIGATION -->
+          <nav class="hidden md:flex mx-auto space-x-8 text-lg font-medium">
+              <a href="#" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+              <a href="#" class="text-gray-700 hover:text-blue-600 transition">About</a>
+              <a href="#" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+              <a href="#" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+          </nav>
+
+          <!-- MOBILE MENU ICON -->
+          <button class="md:hidden text-gray-700 focus:outline-none text-3xl">☰</button>
+      </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="h-[2000px] p-6">
+      <h1 class="text-3xl font-semibold mb-4">Scroll down to test the logo animation</h1>
+      <p class="text-gray-600">Now the logo is on the left and moves smoothly into the nav area.</p>
+  </main>
+
   </body>
 
   <script type="module" src="/src/main.js"></script>
