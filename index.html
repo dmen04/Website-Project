@@ -13,7 +13,7 @@
       <load src="src/components/header.html" />
 
       <main>
-          <!--  hero sekcija    -->
+          <!--  hero    -->
           <section class="relative h-screen flex flex-col justify-center items-center text-center text-white">
               <img src="/images/hero.png" alt="Hero picture" class="absolute inset-0 w-full h-full object-cover">
 
@@ -22,11 +22,11 @@
               <div class="relative z-10 max-w-7xl mx-auto px-6 animate-fade-in-text">
                   <h1 class="text-white text-7xl md:text-[200px] font-bold mb-4">Milwaukee Bucks</h1>
                   <p class="text-white text-xl md:text-[30px] mb-6">Explore the players, history, and achievements of the Bucks</p>
-                  <a href="/players.html" class="px-6 py-3 bg-[#EEE1C6] text-[#00471B] font-semibold rounded hover:bg-white transition">Meet the Players</a>
+                  <a href="/src/pages/roster.html" class="px-6 py-3 bg-[#EEE1C6] text-[#00471B] font-semibold rounded hover:bg-white transition">Meet the Players</a>
               </div>
           </section>
 
-          <!--   upcoming games ievietots ar JS   -->
+          <!--   upcoming games JS   -->
           <section class="relative py-12 flex flex-col justify-center items-center text-center overflow-visible"></section>
 
           <section class="relative py-12 flex justify-center items-center text-center flex-1 flex-wrap">
@@ -63,4 +63,5 @@
   </body>
 
   <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/js/pagejs/home.js"></script>
 </html>

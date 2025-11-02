@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Roster</title>
+</head>
+
+<body>
+<!-- html injection header -->
+<load src="src/components/header.html" />
+
+<main>
+    <section class="relative py-12 flex justify-center items-center text-center flex-1 flex-wrap">
+        <div class="max-w-7xl w-full mx-auto border-y-2 border-[#EEE1C6]">
+            <h1 class="text-[#00471B] text-7xl py-2">Roster</h1>
+
+        </div>
+        <div id="players-container" class="max-w-7xl w-full flex flex-wrap justify-center gap-6 py-12"></div>
+    </section>
+</main>
+
+<!-- html injection footer -->
+<load src="src/components/footer.html" />
+
+</body>
+
+<script type="module" src="/src/js/pagejs/roster.js"></script>
+<script type="module" src="/src/main.js"></script>
+</html>

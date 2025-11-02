@@ -26,13 +26,24 @@ export async function getPlayers() {
             headers.forEach((header, i) => {
                 player[header] = playerArray[i];
             });
+
+            // Add player image URL using NBA CDN
+            // Fallback: placeholder if image not available
+            const playerId = player.PLAYER_ID;
+            player.IMAGE_URL = `https://cdn.nba.com/headshots/nba/latest/1040x760/${playerId}.png`;
+
             return player;
         });
 
+        return roster;
+
     } catch (err) {
         console.error(err.response ? err.response.data : err.message);
+        return [];
     }
 }
+
+
 
 //get team info
 export async function getTeamInfo() {

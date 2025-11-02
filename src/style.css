@@ -49,7 +49,7 @@ nav a {
     animation: fadeInText 2s ease-in-out forwards;
 }
 
-/* Upcoming games scroll */
+/* upcoming games scroll */
 .games-container {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -58,4 +58,13 @@ nav a {
 
 .games-container::-webkit-scrollbar {
     display: none;
+}
+
+/*player card*/
+.player-card {
+    transition: transform 0.3s ease;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
 }
