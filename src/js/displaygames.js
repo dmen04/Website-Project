@@ -1,5 +1,4 @@
 export function displayGames(games) {
-    console.log('displayGames function called with:', games);
 
     const section = document.querySelector('section.py-12');
     if (!section) {

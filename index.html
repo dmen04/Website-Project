@@ -9,23 +9,56 @@
   </head>
 
   <body>
-  <load src="src/components/header.html" />
+      <!-- html injection header -->
+      <load src="src/components/header.html" />
 
-  <main>
-      <section class="relative h-screen flex flex-col justify-center items-center text-center text-white">
-          <img src="/images/hero.png" alt="Hero picture" class="absolute inset-0 w-full h-full object-cover">
+      <main>
+          <!--  HERO    -->
+          <section class="relative h-screen flex flex-col justify-center items-center text-center text-white">
+              <img src="/images/hero.png" alt="Hero picture" class="absolute inset-0 w-full h-full object-cover">
 
-          <div class="absolute inset-0 bg-[#00471B] opacity-0 animate-fade-in pointer-events-none"></div>
+              <div class="absolute inset-0 bg-[#00471B] opacity-0 animate-fade-in pointer-events-none"></div>
 
-          <div class="relative z-10 max-w-7xl mx-auto px-6 animate-fade-in-text">
-              <h1 class="text-white text-7xl md:text-[200px] font-bold mb-4">Milwaukee Bucks</h1>
-              <p class="text-white text-xl md:text-[30px] mb-6">Explore the players, history, and achievements of the Bucks</p>
-              <a href="/players.html" class="px-6 py-3 bg-[#EEE1C6] text-[#00471B] font-semibold rounded hover:bg-white transition">Meet the Players</a>
-          </div>
-      </section>
+              <div class="relative z-10 max-w-7xl mx-auto px-6 animate-fade-in-text">
+                  <h1 class="text-white text-7xl md:text-[200px] font-bold mb-4">Milwaukee Bucks</h1>
+                  <p class="text-white text-xl md:text-[30px] mb-6">Explore the players, history, and achievements of the Bucks</p>
+                  <a href="/players.html" class="px-6 py-3 bg-[#EEE1C6] text-[#00471B] font-semibold rounded hover:bg-white transition">Meet the Players</a>
+              </div>
+          </section>
 
-      <section class="relative py-12 flex flex-col justify-center items-center text-center overflow-visible"></section>
-  </main>
+          <!--   Upcoming games ievietots ar JS   -->
+          <section class="relative py-12 flex flex-col justify-center items-center text-center overflow-visible"></section>
+
+          <section class="relative py-12 flex justify-center items-center text-center flex-1 flex-wrap">
+              <div class="max-w-xs w-full px-6">
+                  <h2 class="text-4xl font-bold my-4 text-center">SHOP JERSEYS</h2>
+                  <a href="https://shop.bucks.com/collections/milwaukee-bucks-jerseys" target="_blank">
+                      <img src="/images/shopjersey.png" alt="Jersey Logo" class="w-full h-96 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer">
+                  </a>
+              </div>
+              <div class="max-w-xs w-full px-6">
+                  <h2 class="text-4xl font-bold my-4 text-center">SHOP MEN</h2>
+                  <a href="https://shop.bucks.com/collections/mens-bucks-apparel" target="_blank">
+                      <img src="/images/shopmen.png" alt="Men's Apparel" class="w-full h-96 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer">
+                  </a>
+              </div>
+              <div class="max-w-xs w-full px-6">
+                  <h2 class="text-4xl font-bold my-4 text-center">SHOP WOMAN</h2>
+                  <a href="https://shop.bucks.com/collections/womens-bucks-apparel" target="_blank">
+                      <img src="/images/shopwoman.png" alt="Women's Apparel" class="w-full h-96 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer">
+                  </a>
+              </div>
+              <div class="max-w-xs w-full px-6">
+                  <h2 class="text-4xl font-bold my-4 text-center">SHOP KIDS</h2>
+                  <a href="https://shop.bucks.com/collections/childrens-bucks-apparel" target="_blank">
+                      <img src="/images/shopkids.png" alt="Kids Apparel" class="w-full h-96 object-cover rounded-lg shadow-lg hover:opacity-90 transition cursor-pointer">
+                  </a>
+              </div>
+          </section>
+      </main>
+
+      <!-- html injection footer -->
+      <load src="src/components/footer.html" />
 
   </body>
 

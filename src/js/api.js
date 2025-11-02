@@ -29,7 +29,6 @@ export async function getPlayers() {
             return player;
         });
 
-        console.log('Milwaukee Bucks 2025-26 Roster:', roster);
     } catch (err) {
         console.error(err.response ? err.response.data : err.message);
     }
@@ -78,7 +77,6 @@ export async function getTeamInfo() {
             }
         };
 
-        console.log(teamInfoPretty);
 
     } catch (err) {
         console.error(err.response ? err.response.data : err.message);
@@ -154,7 +152,6 @@ export async function getUpcomingGames() {
         bucksGames.sort((a, b) => new Date(a.date) - new Date(b.date));
         const upcomingGames = bucksGames.slice(0, 10);
 
-        console.log('Upcoming Milwaukee Bucks Games:', upcomingGames);
         return upcomingGames;
 
     } catch (err) {
