@@ -4,40 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Milwaukee Bucks</title>
   </head>
 
   <body>
+  <load src="src/components/header.html" />
 
-  <div id="topHeader" class="w-full bg-[#00471B] py-2 transition-transform duration-300 ease-in-out">
-      <div class="max-w-7xl mx-auto flex justify-end items-center px-6 space-x-4 text-sm">
-          <a href="#" class="text-gray-600 hover:text-blue-600">Facebook</a>
-          <a href="#" class="text-gray-600 hover:text-blue-600">Instagram</a>
-          <a href="#" class="text-gray-600 hover:text-blue-600">Twitter</a>
-      </div>
-  </div>
-
-  <header id="mainHeader" class="sticky top-0 z-50 bg-white shadow transition-all duration-300 ease-in-out">
-      <div class="relative max-w-7xl mx-auto flex items-center justify-between px-6 py-6 md:py-8 transition-all duration-300 ease-in-out">
-
-          <div id="logo" class="absolute left-6 top-12 transform -translate-y-1/2 transition-all duration-500 ease-in-out">
-              <img src="/images/logo.png"
-                   alt="Logo"
-                   class="w-40 h-40 transition-all duration-500 ease-in-out"/>
-          </div>
-
-          <nav class="hidden md:flex mx-auto space-x-8 text-lg font-medium">
-              <a href="#" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-              <a href="#" class="text-gray-700 hover:text-blue-600 transition">About</a>
-              <a href="#" class="text-gray-700 hover:text-blue-600 transition">Services</a>
-              <a href="#" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
-          </nav>
-
-          <button class="md:hidden ml-auto space-x-8 text-gray-700 focus:outline-none text-3xl">☰</button>
-      </div>
-  </header>
-
-  <main class="h-[2000px] p-6">
+  <main class="h-[2000px] max-w-7xl mx-auto">
       <section class="relative h-screen bg-[url('/images/hero.jpg')] bg-cover bg-center flex flex-col justify-center items-center text-center text-white">
           <h1 class="text-5xl md:text-7xl font-bold mb-4">Milwaukee Bucks</h1>
           <p class="text-xl md:text-2xl mb-6">Explore the players, history, and achievements of the Bucks</p>

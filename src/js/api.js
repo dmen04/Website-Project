@@ -1,10 +1,12 @@
 import axios from 'axios';
 
+//variables for api
 const TEAM_ID = 1610612749;
 const SEASON = '2025-26';
 const NBA_STATS_URL = `https://stats.nba.com/stats/commonteamroster?TeamID=${TEAM_ID}&Season=${SEASON}`;
 const TEAM_INFO_URL = `https://stats.nba.com/stats/teaminfocommon?TeamID=${TEAM_ID}&Season=${SEASON}`;
 
+//get players from milwaukee in 2025-2026 season
 export async function getPlayers() {
     try {
         const response = await axios.get(NBA_STATS_URL, {
@@ -33,6 +35,7 @@ export async function getPlayers() {
     }
 }
 
+//get team info
 export async function getTeamInfo() {
     try {
         const response = await axios.get(TEAM_INFO_URL, {
