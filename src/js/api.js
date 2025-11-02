@@ -99,17 +99,10 @@ export function getTeamLogoUrl(teamId, size = 'small') {
     return `https://cdn.nba.com/logos/nba/${teamId}/primary/L/logo.svg`;
 }
 
-//10 upcoming games
+//gets 10 upcoming games
 export async function getUpcomingGames() {
     try {
-        const response = await axios.get(
-            'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json',
-            {
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-                }
-            }
-        );
+        const response = await axios.get('/api/nba/static/json/staticData/scheduleLeagueV2_1.json');
 
         const allGameDates = response.data.leagueSchedule.gameDates;
         const bucksGames = [];

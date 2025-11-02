@@ -16,6 +16,7 @@ nav a {
     text-transform: uppercase;
 }
 
+/* animation for hero section */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -41,9 +42,20 @@ nav a {
 }
 
 .animate-fade-in {
-    animation: fadeIn 3s ease-in-out forwards;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 .animate-fade-in-text {
-    animation: fadeInText 3s ease-in-out forwards;
+    animation: fadeInText 2s ease-in-out forwards;
+}
+
+/* Upcoming games scroll */
+.games-container {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.games-container::-webkit-scrollbar {
+    display: none;
 }

@@ -7,4 +7,14 @@ export default defineConfig({
         tailwindcss(),
         injectHTML()
     ],
+    server: {
+        proxy: {
+            '/api/nba': {
+                target: 'https://cdn.nba.com',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api\/nba/, ''),
+                secure: false
+            }
+        }
+    }
 })
