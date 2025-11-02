@@ -85,3 +85,87 @@ export async function getTeamInfo() {
     }
 }
 
+
+// NBA Team Logo
+export function getTeamLogoUrl(teamId, size = 'small') {
+    const sizeMap = {
+        small: 50,
+        medium: 100,
+        large: 500
+    };
+
+    const pixels = sizeMap[size] || 500;
+
+    return `https://cdn.nba.com/logos/nba/${teamId}/primary/L/logo.svg`;
+}
+
+//10 upcoming games
+export async function getUpcomingGames() {
+    try {
+        const response = await axios.get(
+            'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json',
+            {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                }
+            }
+        );
+
+        const allGameDates = response.data.leagueSchedule.gameDates;
+        const bucksGames = [];
+        const today = new Date();
+
+        allGameDates.forEach(dateObj => {
+            dateObj.games.forEach(game => {
+                const isBucksHome = game.homeTeam.teamId === TEAM_ID;
+                const isBucksAway = game.awayTeam.teamId === TEAM_ID;
+
+                if (isBucksHome || isBucksAway) {
+                    const gameDate = new Date(game.gameDateTimeUTC);
+
+                    if (gameDate >= today) {
+                        bucksGames.push({
+                            gameId: game.gameId,
+                            date: game.gameDateTimeUTC,
+                            gameLabel: game.gameLabel,
+                            homeTeam: {
+                                id: game.homeTeam.teamId,
+                                name: game.homeTeam.teamName,
+                                city: game.homeTeam.teamCity,
+                                tricode: game.homeTeam.teamTricode,
+                                logo: getTeamLogoUrl(game.homeTeam.teamId)
+                            },
+                            awayTeam: {
+                                id: game.awayTeam.teamId,
+                                name: game.awayTeam.teamName,
+                                city: game.awayTeam.teamCity,
+                                tricode: game.awayTeam.teamTricode,
+                                logo: getTeamLogoUrl(game.awayTeam.teamId)
+                            },
+                            arena: game.arenaName,
+                            city: game.arenaCity,
+                            state: game.arenaState,
+                            isHome: isBucksHome,
+                            opponent: isBucksHome ?
+                                `${game.awayTeam.teamCity} ${game.awayTeam.teamName}` :
+                                `${game.homeTeam.teamCity} ${game.homeTeam.teamName}`,
+                            opponentLogo: isBucksHome ?
+                                getTeamLogoUrl(game.awayTeam.teamId) :
+                                getTeamLogoUrl(game.homeTeam.teamId)
+                        });
+                    }
+                }
+            });
+        });
+
+        bucksGames.sort((a, b) => new Date(a.date) - new Date(b.date));
+        const upcomingGames = bucksGames.slice(0, 10);
+
+        console.log('Upcoming Milwaukee Bucks Games:', upcomingGames);
+        return upcomingGames;
+
+    } catch (err) {
+        console.error('Error fetching upcoming games:', err.response ? err.response.data : err.message);
+        return [];
+    }
+}
