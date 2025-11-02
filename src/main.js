@@ -2,10 +2,11 @@ import './style.css';
 import { getUpcomingGames } from './js/api.js';
 import { initHeaderScroll } from './js/header.js';
 import { displayGames } from "./js/displaygames.js";
+import { initBurgerMenu } from './js/burger.js';
 
 async function main() {
     initHeaderScroll();
-
+    initBurgerMenu();
     try {
         const upcomingGames = await getUpcomingGames();
 
