@@ -90,8 +90,8 @@ async function initHomePageGames() {
                     </div>
                 </div>
                 <div class="border-t pt-4">
-                    <p class="text-xl font-semibold text-gray-800">${formattedDate}</p>
-                    <p class="text-lg text-gray-600">${formattedTime}</p>
+                    <p class="text-xl font-semibold text-black">${formattedDate}</p>
+                    <p class="text-lg text-gray-500">${formattedTime}</p>
                     <p class="text-lg text-gray-500 mt-2">${game.arena}</p>
                     <p class="text-lg text-gray-500">${game.city}, ${game.state}</p>
                 </div>
