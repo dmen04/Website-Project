@@ -75,25 +75,25 @@ async function initHomePageGames() {
                         <img src="${game.isHome ? 'https://cdn.nba.com/logos/nba/1610612749/primary/L/logo.svg' : game.opponentLogo}" 
                              alt="${game.isHome ? 'Milwaukee Bucks' : game.opponent}" 
                              class="w-16 h-16 mb-2 mx-auto">
-                        <p class="font-bold text-xs">${game.isHome ? 'MIL' : game.awayTeam.tricode}</p>
+                        <p class="font-bold text-2xl">${game.isHome ? 'MIL' : game.awayTeam.tricode}</p>
                     </div>
                     
                     <div class="text-center">
-                        <p class="text-2xl font-bold">${game.isHome ? 'VS' : '@'}</p>
+                        <p class="text-4xl font-bold">${game.isHome ? 'VS' : '@'}</p>
                     </div>
                     
                     <div class="text-center">
                         <img src="${game.isHome ? game.opponentLogo : 'https://cdn.nba.com/logos/nba/1610612749/primary/L/logo.svg'}" 
                              alt="${game.isHome ? game.opponent : 'Milwaukee Bucks'}" 
                              class="w-16 h-16 mb-2 mx-auto">
-                        <p class="font-bold text-xs">${game.isHome ? game.awayTeam.tricode : 'MIL'}</p>
+                        <p class="font-bold text-2xl">${game.isHome ? game.awayTeam.tricode : 'MIL'}</p>
                     </div>
                 </div>
                 <div class="border-t pt-4">
-                    <p class="text-sm font-semibold text-gray-800">${formattedDate}</p>
-                    <p class="text-sm text-gray-600">${formattedTime}</p>
-                    <p class="text-xs text-gray-500 mt-2">${game.arena}</p>
-                    <p class="text-xs text-gray-500">${game.city}, ${game.state}</p>
+                    <p class="text-xl font-semibold text-gray-800">${formattedDate}</p>
+                    <p class="text-lg text-gray-600">${formattedTime}</p>
+                    <p class="text-lg text-gray-500 mt-2">${game.arena}</p>
+                    <p class="text-lg text-gray-500">${game.city}, ${game.state}</p>
                 </div>
             `;
 

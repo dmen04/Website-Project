@@ -6,9 +6,11 @@ export function initHeaderScroll() {
     const logoContainer = document.getElementById("logo");
     const mainHeader = document.getElementById("mainHeader");
 
+    //scroll
     function handleScroll() {
         const scrollY = window.scrollY;
 
+        //desktop
         if (window.innerWidth >= 768) {
             if (scrollY > 80) {
                 topHeader.classList.add("-translate-y-full");
@@ -22,6 +24,7 @@ export function initHeaderScroll() {
                 logoContainer.classList.replace("top-1/2", "top-12");
             }
         } else {
+            //mobile
             logo.classList.remove("w-35", "h-35");
             logo.classList.add("w-16", "h-16");
             logoContainer.classList.remove("top-12");
@@ -49,11 +52,11 @@ export function initBurgerMenu() {
         return;
     }
 
-    // open menu
+    //open menu
     const openMenu = () => {
-        mobileMenu.classList.remove('hidden'); // 👈 show it first
+        mobileMenu.classList.remove('hidden');
         menuOverlay.classList.remove('hidden');
-        // small delay to allow transition to start smoothly
+
         requestAnimationFrame(() => {
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
@@ -61,24 +64,24 @@ export function initBurgerMenu() {
         document.body.style.overflow = 'hidden';
     };
 
-    // close menu
+    //close menu
     const closeMenu = () => {
         mobileMenu.classList.remove('translate-x-0');
         mobileMenu.classList.add('translate-x-full');
         menuOverlay.classList.add('hidden');
         document.body.style.overflow = '';
 
-        // hide after transition completes
+        //hide when transition completes
         setTimeout(() => {
             mobileMenu.classList.add('hidden');
-        }, 300); // matches your CSS duration
+        }, 300);
     };
 
     burgerBtn.addEventListener('click', openMenu);
     closeMenuBtn.addEventListener('click', closeMenu);
     menuOverlay.addEventListener('click', closeMenu);
 
-    // close when clicking on any link
+    //close clicking link
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 }
